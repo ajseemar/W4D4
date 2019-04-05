@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+header {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 75px;
+    color: #b16400;
+    text-align: center;
+}
+
+hr {
+    width: 55%;
+    padding: 0px;
+}
+
+.welcome_text {
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    color: #2c6b3c;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    color: #66be7c;
+    text-align: center;
+}
+
+.page_links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.button {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: skyblue;
+    color: #000;
+    margin-bottom: 20px;
+    width: 75px;
+}
+
+.select_items {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(221, 205, 64);
+    color: #000;
+    margin-bottom: 20px;
+}

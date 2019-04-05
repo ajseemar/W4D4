@@ -1,0 +1,11 @@
+<h2>NEW BAND!</h2>
+
+<%= print_flash %>
+
+<form action="<%= bands_url %>" method="post">
+    <%= auth_form %>
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="band[name]" value="<%= @band.name %>">
+    <br>
+    <input type="submit" name="Submit">
+</form>

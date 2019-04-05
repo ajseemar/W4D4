@@ -1,0 +1,47 @@
+<% 
+    if action == :sign_in 
+        page_text = "SIGN-IN"
+        button_action_url = new_user_url
+        button_text = "Go to Sign-Up"
+        form_action_url = session_url
+        submit_text = "Sign In"
+    else
+        page_text = "SIGN-UP"
+        button_action_url = new_session_url
+        button_text = "Go to Sign-In"
+        form_action_url = users_url
+        submit_text = "Create Account"
+    end
+%>
+
+
+
+<div class="welcome_text">
+    <h2><%= page_text %></h2>
+
+    <form action="<%= button_action_url %>" method="get">
+        <%= auth_form %>
+        <input type="submit" value="<%= button_text %>">
+    </form>
+</div>
+
+<%= print_flash %>
+
+
+<form action="<%= form_action_url %>" method="post">
+    <%= auth_form %>
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="email">Email: </label></td>
+                <td><input id="email" type="text" name="user[email]" value="<%= user.email %>"></td>
+            </tr>
+            <br>
+            <tr>
+                <td><label for="password">Password: </label></td>
+                <td><input id="password" type="password" name="user[password]" value="<%= user.password %>"></td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="<%= submit_text %>">
+</form>

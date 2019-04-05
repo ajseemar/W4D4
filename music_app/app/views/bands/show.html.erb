@@ -1,0 +1,28 @@
+<h2><%= @band.name %></h2>
+
+<h4>ALBUMS</h4>
+
+
+
+<h4>LINKS</h4>
+<ul class="page_links">
+    <li>
+        <a href="<%= new_album_url %>">Add Album</a>
+    </li>
+
+    <li>
+        <a class="button" href="<%= edit_band_url %>">Edit Band</a>
+    </li>
+
+    <li>
+        <form class="button" action="<%= band_url %>" method="get">
+            <%= auth_form %>
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" name="Destroy Band">
+        </form>
+    </li>
+
+    <li>
+        <a class="button" href="<%= bands_url %>">All bands</a>
+    </li>
+</ul>

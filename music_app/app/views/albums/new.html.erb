@@ -1,0 +1,29 @@
+<h2>NEW <%= @band.name %> ALBUM!</h2>
+
+<div>
+    <form action="<%= albums_url %>" method="post">
+        <%= auth_form %>
+        <label for="name">Name</label>
+        <input id="name" type="text" name="album[name]" value="<%= @album.name %>">
+        
+        <label for="band">Band</label>
+        <select id="band" name="album[band]">
+            <% Band.all.each do |band| %>
+                <option <%= "selected" if band == @band.name %> value="<%= Band.find_by(name: band).id %>"><%= band %></option>
+            <% end %>
+        </select>
+
+        <label>
+            <input type="radio" name="band[is_live]" value="<%= @album.is_live %>">Live
+        </label>
+        
+        <label>
+            <input type="radio" name="band[is_live]" value="<%= @album.is_live %>">Studio
+        </label>
+
+        <label for="year">Year</label>
+        <input id="year" type="text" name="album[year]" value="<%= @album.year %>">
+
+        <input type="submit" value="Create Album!">
+    </form>
+</div>
